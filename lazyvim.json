@@ -2,6 +2,7 @@
   "extras": [
     "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.coding.mini-comment",
+    "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.lang.docker",
     "lazyvim.plugins.extras.lang.dotnet",
     "lazyvim.plugins.extras.lang.git",
@@ -11,6 +12,7 @@
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.test.core",
