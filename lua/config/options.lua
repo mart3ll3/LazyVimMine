@@ -70,3 +70,4 @@ vim.o.guifont = "JetBrainsMono Nerd Font:h12"
 vim.o.lines = 999
 vim.o.columns = 999
 vim.o.cursorline = true
+vim.o.background = "dark"
