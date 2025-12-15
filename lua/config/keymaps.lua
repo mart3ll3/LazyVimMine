@@ -50,6 +50,10 @@ vim.keymap.set({ "n", "t" }, "<c-t>", function()
 end, { desc = "Terminal (Root Dir)" })
 vim.keymap.set({ "n" }, "<leader>o", "<cmd>AerialToggle<cr>", { desc = "Aerial (Symbols)" })
 
+vim.keymap.set({ "n", "x" }, "<leader>ff", function()
+  LazyVim.format({ force = true })
+end, { desc = "Format" })
+
 --vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
 --vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
 --vim.keymap.set("n", "<leader>sW", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
