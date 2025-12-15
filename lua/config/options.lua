@@ -66,8 +66,11 @@ vim.o.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+vim.o.guifont = "JetBrainsMono Nerd Font:h11"
 vim.o.lines = 999
 vim.o.columns = 999
 vim.o.cursorline = true
 vim.o.background = "dark"
+
+vim.g.snacks_animate = false
+-- vim.api.nvim_set_hl(0, "@markdown.bold", { fg = "#fe8019", bold = true })
