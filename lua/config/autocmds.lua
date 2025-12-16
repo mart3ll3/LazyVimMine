@@ -20,3 +20,28 @@ vim.api.nvim_create_autocmd("FileType", {
     })
   end,
 })
+
+-- Enable active pane highlighting for lazygit with gruvbox theme
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "gruvbox",
+  callback = function()
+    -- Set distinct colors for active vs inactive borders in floating windows (lazygit)
+    local colors = {
+      inactive = "#504945", -- gruvbox dark gray
+      active = "#fe8019",   -- gruvbox orange
+    }
+    
+    -- Inactive border
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.inactive })
+    vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.inactive })
+    
+    -- Active border - linked to SnacksNotifierBorder which is used for active pane
+    vim.api.nvim_set_hl(0, "SnacksNotifierBorderInfo", { fg = colors.active })
+  end,
+})
+
+-- Trigger the ColorScheme autocmd if gruvbox is already loaded
+if vim.g.colors_name == "gruvbox" then
+  vim.api.nvim_exec_autocmds("ColorScheme", { pattern = "gruvbox" })
+end
+
