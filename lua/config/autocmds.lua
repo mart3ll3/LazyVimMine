@@ -28,15 +28,14 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     -- Set distinct colors for active vs inactive borders in floating windows (lazygit)
     local colors = {
       inactive = "#504945", -- gruvbox dark gray
-      active = "#fe8019",   -- gruvbox orange
+      active = "#fe8019", -- gruvbox orange
     }
-    
+
     -- Inactive border
     vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.inactive })
-    vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.inactive })
-    
+
     -- Active border - linked to SnacksNotifierBorder which is used for active pane
-    vim.api.nvim_set_hl(0, "SnacksNotifierBorderInfo", { fg = colors.active })
+    vim.api.nvim_set_hl(0, "MatchParen", { fg = colors.active })
   end,
 })
 
@@ -44,4 +43,3 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 if vim.g.colors_name == "gruvbox" then
   vim.api.nvim_exec_autocmds("ColorScheme", { pattern = "gruvbox" })
 end
-
