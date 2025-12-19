@@ -21,6 +21,12 @@ vim.keymap.set("n", "<leader>ba", "<cmd>bufdo Bwipeout<cr>", { desc = "[B]uffers
 --vim.keymap.set("n", "<leader>bu", "<cmd>Bdeleteexcept<CR>", { desc = "[B]uffers Close All B[u]t This" })
 vim.keymap.set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "[B]uffer [N]ew " })
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split Vertically" })
+-- Move buffer left
+vim.keymap.set("n", "<C-S-Left>", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left" })
+
+-- Move buffer right
+vim.keymap.set("n", "<C-S-Right>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right" })
+
 vim.keymap.set("n", "s", function()
   require("hop")
   vim.cmd("silent! HopWord")
