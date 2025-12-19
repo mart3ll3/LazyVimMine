@@ -35,7 +35,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.inactive })
 
     -- Active border - linked to SnacksNotifierBorder which is used for active pane
-    vim.api.nvim_set_hl(0, "MatchParen", { fg = colors.active })
+    vim.api.nvim_set_hl(0, "MatchParen", { fg = colors.active, bold = true })
+    vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = colors.active })
+    vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = colors.active })
   end,
 })
 
