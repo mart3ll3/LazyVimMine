@@ -1,10 +1,26 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+local function _bufferline_navigate(next)
+  local listed = vim.fn.getbufinfo({ buflisted = 1 })
+  if #listed <= 1 then
+    vim.notify("No other buffers", vim.log.levels.INFO)
+    return
+  end
+  local cmd = next and "BufferLineCycleNext" or "BufferLineCyclePrev"
+  local ok = pcall(vim.cmd, cmd)
+  if not ok then
+    vim.cmd(next and "bnext" or "bprevious")
+  end
+end
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true })
-vim.keymap.set("n", "<S-Right>", ":bnext<CR>", { silent = true })
-vim.keymap.set("n", "<S-Left>", ":bprevious<CR>", { silent = true })
+vim.keymap.set("n", "<S-Right>", function()
+  _bufferline_navigate(true)
+end, { silent = true })
+vim.keymap.set("n", "<S-Left>", function()
+  _bufferline_navigate(false)
+end, { silent = true })
 vim.keymap.set("n", "<leader>hh", "<cmd>nohlsearch<CR>", { desc = "Clear highlights" })
 --vim.keymap.set("n", "<C-q>", "<cmd>Bdelete!<CR>", { desc = "[B]uffer Force [D]elete" })
 vim.keymap.set("n", "<C-q>", "<cmd>tabclose<cr>", { desc = "Close Tab" })
