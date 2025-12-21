@@ -73,4 +73,5 @@ vim.o.cursorline = true
 vim.o.background = "dark"
 
 vim.g.snacks_animate = false
+
 -- vim.api.nvim_set_hl(0, "@markdown.bold", { fg = "#fe8019", bold = true })
