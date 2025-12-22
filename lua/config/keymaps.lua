@@ -70,7 +70,8 @@ end, { desc = "Lazygit (Root Dir)" })
 -- vim.keymap.set({ "n", "t" }, "<c-t>", function()
 --   Snacks.terminal(nil, { cwd = LazyVim.root() })
 -- end, { desc = "Terminal (Root Dir)" })
--- vim.keymap.set({ "n" }, "<leader>o", "<cmd>AerialToggle<cr>", { desc = "Aerial (Symbols)" })
+
+vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
 vim.keymap.set({ "n", "x" }, "<leader>ff", function()
   LazyVim.format({ force = true })
