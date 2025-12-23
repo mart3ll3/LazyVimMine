@@ -45,3 +45,15 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 if vim.g.colors_name == "gruvbox" then
   vim.api.nvim_exec_autocmds("ColorScheme", { pattern = "gruvbox" })
 end
+
+vim.api.nvim_create_autocmd({
+  "BufAdd",
+  "BufEnter",
+  "BufDelete",
+}, {
+  callback = function()
+    vim.defer_fn(function()
+      pcall(require("utils.harpoon_sync").sync_with_bufferline)
+    end, 50)
+  end,
+})
