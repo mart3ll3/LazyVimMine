@@ -62,7 +62,14 @@ vim.keymap.set("x", "m", require("substitute").visual, { noremap = true })
 
 -- Open parent directory in floating window
 vim.keymap.set("n", "<space>e", require("oil").toggle_float)
-vim.keymap.set("n", "<leader>sf", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" })
+vim.keymap.set( "n", "<leader>sf",
+  LazyVim.pick("files", { hidden = true, no_ignore = true }),
+  { desc = "Find Files (Root Dir)" }
+)
+vim.keymap.set( "n", "<leader>sg",
+  LazyVim.pick("live_grep", { hidden = true, no_ignore = true }),
+  { desc = "Grep (Root Dir)" }
+)
 vim.keymap.set("n", "<leader>gs", function()
   Snacks.lazygit({ cwd = LazyVim.root.git() })
 end, { desc = "Lazygit (Root Dir)" })
