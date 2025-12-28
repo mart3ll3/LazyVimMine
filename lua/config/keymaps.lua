@@ -31,7 +31,7 @@ end, { desc = "Delete Buffer" })
 vim.keymap.set("n", "<leader>bu", function()
   Snacks.bufdelete.other()
 end, { desc = "Delete Other Buffers" })
-vim.keymap.set("n", "<leader>ba", "<cmd>bufdo Bwipeout<cr>", { desc = "[B]uffers Close [A]ll" })
+vim.keymap.set("n", "<leader>ba", "<cmd>%bd!<cr>", { desc = "[B]uffers Close [A]ll" })
 -- vim.keymap.set("n", "<leader>ba", "<cmd>Bdeleteall<cr>", { desc = "[B]uffers Close [A]ll" })
 -- vim.keymap.set("n", "<leader>bu", "<cmd>%bd|e#<CR>", { desc = "[B]uffers Close All B[u]t This" })
 --vim.keymap.set("n", "<leader>bu", "<cmd>Bdeleteexcept<CR>", { desc = "[B]uffers Close All B[u]t This" })
@@ -62,11 +62,15 @@ vim.keymap.set("x", "m", require("substitute").visual, { noremap = true })
 
 -- Open parent directory in floating window
 vim.keymap.set("n", "<space>e", require("oil").toggle_float)
-vim.keymap.set( "n", "<leader>sf",
+vim.keymap.set(
+  "n",
+  "<leader>sf",
   LazyVim.pick("files", { hidden = true, no_ignore = true }),
   { desc = "Find Files (Root Dir)" }
 )
-vim.keymap.set( "n", "<leader>sg",
+vim.keymap.set(
+  "n",
+  "<leader>sg",
   LazyVim.pick("live_grep", { hidden = true, no_ignore = true }),
   { desc = "Grep (Root Dir)" }
 )
