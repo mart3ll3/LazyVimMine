@@ -1,6 +1,6 @@
-if true then
-  return {}
-end
+--if true then
+--  return {}
+-- end
 return {
   "saghen/blink.cmp",
   dependencies = { "fang2hou/blink-copilot" },
@@ -17,7 +17,8 @@ return {
       },
     },
     keymap = {
-      preset = "super-tab",
+      preset = "super-tab",      
+      ["<CR>"] = {},
       ["<C-y>"] = {
         -- Insert-mode Ctrl+Y: mirror normal-mode behavior
         -- Accept Copilot NES when active; otherwise gracefully fall back to cmp
