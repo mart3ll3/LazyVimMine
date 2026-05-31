@@ -10,6 +10,12 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+      signs = true,
+      underline = false,
+    })
+
     -- break the Tree-sitter link first
     vim.api.nvim_set_hl(0, "@markup.strong", {})
 
