@@ -71,6 +71,7 @@ vim.o.lines = 999
 vim.o.columns = 999
 vim.o.cursorline = true
 vim.o.background = "dark"
+vim.g.autoformat = false
 
 vim.g.snacks_animate = false
 
